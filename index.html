@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OSI Model & Client-Server Architecture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body class="text-white">
+    <!-- Floating Particles Background -->
+    <div class="floating-particles">
+      <div
+        class="particle"
+        style="
+          width: 4px;
+          height: 4px;
+          top: 20%;
+          left: 10%;
+          animation-delay: 0s;
+        "
+      ></div>
+      <div
+        class="particle"
+        style="
+          width: 6px;
+          height: 6px;
+          top: 60%;
+          left: 80%;
+          animation-delay: 3s;
+        "
+      ></div>
+      <div
+        class="particle"
+        style="
+          width: 3px;
+          height: 3px;
+          top: 40%;
+          left: 30%;
+          animation-delay: 6s;
+        "
+      ></div>
+      <div
+        class="particle"
+        style="
+          width: 5px;
+          height: 5px;
+          top: 80%;
+          left: 60%;
+          animation-delay: 9s;
+        "
+      ></div>
+      <div
+        class="particle"
+        style="
+          width: 4px;
+          height: 4px;
+          top: 15%;
+          left: 70%;
+          animation-delay: 12s;
+        "
+      ></div>
+      <div
+        class="particle"
+        style="
+          width: 7px;
+          height: 7px;
+          top: 50%;
+          left: 20%;
+          animation-delay: 15s;
+        "
+      ></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed w-full top-0 z-50">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="text-2xl font-bold gradient-text">OSI Model</div>
+          <div class="hidden md:flex space-x-reverse space-x-6 text-sm">
+            <a href="#home" class="nav-link hover:text-red-500">الرئيسية</a>
+            <a href="#osi" class="nav-link hover:text-red-500">OSI Model</a>
+            <a href="#layer7" class="nav-link hover:text-red-500"
+              >Application</a
+            >
+            <a href="#layer6" class="nav-link hover:text-red-500"
+              >Presentation</a
+            >
+            <a href="#layer5" class="nav-link hover:text-red-500">Session</a>
+            <a href="#layer4" class="nav-link hover:text-red-500">Transport</a>
+            <a href="#layer3" class="nav-link hover:text-red-500">Network</a>
+            <a href="#layer2" class="nav-link hover:text-red-500">Data Link</a>
+            <a href="#layer1" class="nav-link hover:text-red-500">Physical</a>
+            <a href="#client-server" class="nav-link hover:text-red-500"
+              >Client-Server</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="hero-section min-h-[110vh] flex items-center justify-center pt-20 relative overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0">
+        <div
+          class="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"
+        ></div>
+        <div
+          class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-800 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"
+          style="animation-delay: 1s"
+        ></div>
+      </div>
+
+      <div
+        class="container mx-auto px-6 text-center relative z-10"
+        data-aos="fade-up"
+      >
+        <div class="mt-6">
+          <i
+            class="fas fa-network-wired text-7xl text-red-600 mb-2 inline-block animate-pulse"
+          ></i>
+        </div>
+        <h1
+          class="text-6xl font-black mb-0 gradient-text tracking-tight leading-tight"
+        >
+          OSI Model
+        </h1>
+        <div
+          class="h-1 w-32 bg-gradient-to-r from-red-600 to-red-900 mx-auto mb-3"
+        ></div>
+        <p class="text-3xl mb-4 text-gray-300 font-light">
+          رحلة عبر طبقات الشبكة السبعة
+        </p>
+        <p class="text-xl mb-12 text-gray-400 max-w-2xl mx-auto">
+          اكتشف كيف تنتقل البيانات من جهازك إلى العالم الرقمي عبر 7 طبقات
+          متكاملة
+        </p>
+        <div class="flex justify-center gap-6 flex-wrap">
+          <a
+            href="#osi"
+            class="group relative bg-red-600 hover:bg-red-700 px-6 py-3 rounded-full font-medium text-base transition-all transform hover:scale-110 hover:shadow-2xl hover:shadow-red-600/50 duration-500"
+          >
+            <i class="fas fa-rocket"></i>
+            ابدأ التعلم الآن
+          </a>
+          <a
+            href="#client-server"
+            class="group relative border-2 border-red-600 hover:bg-red-600 px-6 py-3 rounded-full font-medium text-base transition-all transform hover:scale-110 duration-500"
+          >
+            <i class="fas fa-server mr-2"></i>
+            نموذج Client-Server
+          </a>
+        </div>
+
+        <!-- Floating Icons -->
+        <div class="mt-20 flex justify-center gap-8 flex-wrap">
+          <div
+            class="transform hover:scale-125 transition-transform"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <i class="fas fa-shield-alt text-4xl text-red-500"></i>
+          </div>
+          <div
+            class="transform hover:scale-125 transition-transform"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <i class="fas fa-code text-4xl text-red-500"></i>
+          </div>
+          <div
+            class="transform hover:scale-125 transition-transform"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <i class="fas fa-database text-4xl text-red-500"></i>
+          </div>
+          <div
+            class="transform hover:scale-125 transition-transform"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <i class="fas fa-wifi text-4xl text-red-500"></i>
+          </div>
+          <div
+            class="transform hover:scale-125 transition-transform"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <i class="fas fa-globe text-4xl text-red-500"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div
+        class="absolute bottom-24 left-1/2 transform -translate-x-1/2 animate-bounce"
+      >
+        <a href="#osi">
+          <i class="fas fa-chevron-down text-3xl text-red-500"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- OSI Model Introduction -->
+    <section id="osi" class="py-20 relative z-10">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-5xl font-black mb-4 gradient-text">
+            ما هو OSI Model؟
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            نموذج OSI (Open Systems Interconnection) هو إطار مفاهيمي يتكون من 7
+            طبقات يستخدم لفهم وتصميم بنية الشبكات. كل طبقة لها وظائف محددة
+            وتتواصل مع الطبقات المجاورة.
+          </p>
+        </div>
+
+        <!-- OSI Layers Overview -->
+        <div
+          class="grid grid-cols-1 lg:grid-cols-7 gap-4 mb-20"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div
+            class="layer-card rounded-lg p-4 text-center transform hover:scale-105 transition"
+          >
+            <i class="fas fa-mobile-alt text-4xl mb-2 text-red-500"></i>
+            <h3 class="font-bold text-red-500">Application</h3>
+            <p class="text-xs text-gray-400">Layer 7</p>
+          </div>
+          <div
+            class="layer-card rounded-lg p-4 text-center transform hover:scale-105 transition"
+          >
+            <i class="fas fa-file-code text-4xl mb-2 text-red-500"></i>
+            <h3 class="font-bold text-red-500">Presentation</h3>
+            <p class="text-xs text-gray-400">Layer 6</p>
+          </div>
+          <div
+            class="layer-card rounded-lg p-4 text-center transform hover:scale-105 transition"
+          >
+            <i class="fas fa-handshake text-4xl mb-2 text-red-500"></i>
+            <h3 class="font-bold text-red-500">Session</h3>
+            <p class="text-xs text-gray-400">Layer 5</p>
+          </div>
+          <div
+            class="layer-card rounded-lg p-4 text-center transform hover:scale-105 transition"
+          >
+            <i class="fas fa-truck text-4xl mb-2 text-red-500"></i>
+            <h3 class="font-bold text-red-500">Transport</h3>
+            <p class="text-xs text-gray-400">Layer 4</p>
+          </div>
+          <div
+            class="layer-card rounded-lg p-4 text-center transform hover:scale-105 transition"
+          >
+            <i class="fas fa-route text-4xl mb-2 text-red-500"></i>
+            <h3 class="font-bold text-red-500">Network</h3>
+            <p class="text-xs text-gray-400">Layer 3</p>
+          </div>
+          <div
+            class="layer-card rounded-lg p-4 text-center transform hover:scale-105 transition"
+          >
+            <i class="fas fa-link text-4xl mb-2 text-red-500"></i>
+            <h3 class="font-bold text-red-500">Data Link</h3>
+            <p class="text-xs text-gray-400">Layer 2</p>
+          </div>
+          <div
+            class="layer-card rounded-lg p-4 text-center transform hover:scale-105 transition"
+          >
+            <i class="fas fa-bolt text-4xl mb-2 text-red-500"></i>
+            <h3 class="font-bold text-red-500">Physical</h3>
+            <p class="text-xs text-gray-400">Layer 1</p>
+          </div>
+        </div>
+
+        <!-- Layer 7 - Application -->
+        <div
+          id="layer7"
+          class="layer-card rounded-2xl p-8 mb-8 relative"
+          data-aos="fade-right"
+        >
+          <div class="layer-number">7</div>
+          <div class="flex items-start gap-6">
+            <i class="fas fa-mobile-alt text-6xl text-red-500"></i>
+            <div class="flex-1">
+              <h3 class="text-3xl font-bold text-red-500 mb-4">
+                Application Layer - طبقة التطبيقات
+              </h3>
+              <p class="text-gray-300 mb-4">
+                هي الطبقة الأقرب للمستخدم النهائي وتوفر واجهة بين التطبيقات
+                وعمليات الشبكة.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-bold text-red-400 mb-2">الوظائف:</h4>
+                  <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• توفير خدمات الشبكة للتطبيقات</li>
+                    <li>• إدارة الاتصال بين التطبيقات</li>
+                    <li>• التعامل مع البيانات للمستخدم</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-red-400 mb-2">البروتوكولات:</h4>
+                  <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• HTTP/HTTPS - تصفح الويب</li>
+                    <li>• FTP - نقل الملفات</li>
+                    <li>• SMTP - البريد الإلكتروني</li>
+                    <li>• DNS - نظام أسماء النطاقات</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 6 - Presentation -->
+        <div
+          id="layer6"
+          class="layer-card rounded-2xl p-8 mb-8 relative"
+          data-aos="fade-left"
+        >
+          <div class="layer-number">6</div>
+          <div class="flex items-start gap-6">
+            <i class="fas fa-file-code text-6xl text-red-500"></i>
+            <div class="flex-1">
+              <h3 class="text-3xl font-bold text-red-500 mb-4">
+                Presentation Layer - طبقة العرض
+              </h3>
+              <p class="text-gray-300 mb-4">
+                مسؤولة عن ترجمة وتنسيق وتشفير البيانات لتكون مفهومة لطبقة
+                التطبيقات.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-bold text-red-400 mb-2">الوظائف:</h4>
+                  <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• تشفير وفك تشفير البيانات</li>
+                    <li>• ضغط البيانات وفك الضغط</li>
+                    <li>• ترجمة تنسيقات البيانات</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-red-400 mb-2">أمثلة:</h4>
+                  <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• SSL/TLS - التشفير الآمن</li>
+                    <li>• JPEG, GIF - تنسيقات الصور</li>
+                    <li>• MPEG - تنسيقات الفيديو</li>
+                    <li>• ASCII, Unicode - تشفير النصوص</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 5 - Session -->
+        <div
+          id="layer5"
+          class="layer-card rounded-2xl p-8 mb-8 relative"
+          data-aos="fade-right"
+        >
+          <div class="layer-number">5</div>
+          <div class="flex items-start gap-6">
+            <i class="fas fa-handshake text-6xl text-red-500"></i>
+            <div class="flex-1">
+              <h3 class="text-3xl font-bold text-red-500 mb-4">
+                Session Layer - طبقة الجلسة
+              </h3>
+              <p class="text-gray-300 mb-4">
+                تدير الجلسات والحوارات بين الأجهزة، وتنظم بدء وإنهاء الاتصالات.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-bold text-red-400 mb-2">الوظائف:</h4>
+                  <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• إنشاء وإدارة وإنهاء الجلسات</li>
+                    <li>• المزامنة بين الأجهزة</li>
+                    <li>• استعادة الجلسة عند الانقطاع</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-red-400 mb-2">البروتوكولات:</h4>
+                  <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• NetBIOS</li>
+                    <li>• RPC - Remote Procedure Call</li>
+                    <li>• PPTP - Point-to-Point Tunneling</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 4 - Transport -->
+        <div
+          id="layer4"
+          class="layer-card rounded-2xl p-8 mb-8 relative"
+          data-aos="fade-left"
+        >
+          <div class="layer-number">4</div>
+          <div class="flex items-start gap-6">
+            <i class="fas fa-truck text-6xl text-red-500"></i>
+            <div class="flex-1">
+              <h3 class="text-3xl font-bold text-red-500 mb-4">
+                Transport Layer - طبقة النقل
+              </h3>
+              <p class="text-gray-300 mb-4">
+                توفر نقل البيانات الموثوق من نقطة إلى أخرى، مع التحكم في تدفق
+                البيانات واكتشاف الأخطاء.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-bold text-red-400 mb-2">الوظائف:</h4>
+                  <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• تقسيم البيانات إلى Segments</li>
+                    <li>• التحكم في تدفق البيانات</li>
+                    <li>• اكتشاف وتصحيح الأخطاء</li>
+                    <li>• ترقيم المنافذ (Port Numbers)</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-red-400 mb-2">البروتوكولات:</h4>
+                  <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• TCP - موثوق ومنظم</li>
+                    <li>• UDP - سريع بدون ضمان</li>
+                    <li>• SCTP - Stream Control</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 3 - Network -->
+        <div
+          id="layer3"
+          class="layer-card rounded-2xl p-8 mb-8 relative"
+          data-aos="fade-right"
+        >
+          <div class="layer-number">3</div>
+          <div class="flex items-start gap-6">
+            <i class="fas fa-route text-6xl text-red-500"></i>
+            <div class="flex-1">
+              <h3 class="text-3xl font-bold text-red-500 mb-4">
+                Network Layer - طبقة الشبكة
+              </h3>
+              <p class="text-gray-300 mb-4">
+                مسؤولة عن توجيه البيانات من المصدر إلى الوجهة عبر شبكات متعددة.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-bold text-red-400 mb-2">الوظائف:</h4>
+                  <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• التوجيه (Routing) بين الشبكات</li>
+                    <li>• العنونة المنطقية (IP Addressing)</li>
+                    <li>• تحديد أفضل مسار للبيانات</li>
+                    <li>• تجزئة الحزم (Packet Fragmentation)</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-red-400 mb-2">البروتوكولات:</h4>
+                  <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• IP - Internet Protocol (IPv4/IPv6)</li>
+                    <li>• ICMP - رسائل التحكم</li>
+                    <li>• ARP - Address Resolution</li>
+                    <li>• Routing Protocols (OSPF, BGP)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 2 - Data Link -->
+        <div
+          id="layer2"
+          class="layer-card rounded-2xl p-8 mb-8 relative"
+          data-aos="fade-left"
+        >
+          <div class="layer-number">2</div>
+          <div class="flex items-start gap-6">
+            <i class="fas fa-link text-6xl text-red-500"></i>
+            <div class="flex-1">
+              <h3 class="text-3xl font-bold text-red-500 mb-4">
+                Data Link Layer - طبقة ربط البيانات
+              </h3>
+              <p class="text-gray-300 mb-4">
+                توفر نقل البيانات الموثوق بين عقدتين متصلتين مباشرة في الشبكة
+                المحلية.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-bold text-red-400 mb-2">الوظائف:</h4>
+                  <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• التأطير (Framing) للبيانات</li>
+                    <li>• العنونة الفيزيائية (MAC Address)</li>
+                    <li>• اكتشاف الأخطاء والتحكم</li>
+                    <li>• التحكم في الوصول للوسط</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-red-400 mb-2">التقنيات:</h4>
+                  <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• Ethernet</li>
+                    <li>• Wi-Fi (802.11)</li>
+                    <li>• PPP - Point-to-Point Protocol</li>
+                    <li>• Switches تعمل في هذه الطبقة</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 1 - Physical -->
+        <div
+          id="layer1"
+          class="layer-card rounded-2xl p-8 mb-8 relative"
+          data-aos="fade-right"
+        >
+          <div class="layer-number">1</div>
+          <div class="flex items-start gap-6">
+            <i class="fas fa-bolt text-6xl text-red-500"></i>
+            <div class="flex-1">
+              <h3 class="text-3xl font-bold text-red-500 mb-4">
+                Physical Layer - الطبقة الفيزيائية
+              </h3>
+              <p class="text-gray-300 mb-4">
+                الطبقة الأساسية التي تتعامل مع النقل الفعلي للبيانات عبر الوسائط
+                المادية.
+              </p>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-bold text-red-400 mb-2">الوظائف:</h4>
+                  <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• نقل البتات (Bits) عبر الوسط</li>
+                    <li>• تحديد المواصفات الكهربائية</li>
+                    <li>• تحديد نوع الكابلات والموصلات</li>
+                    <li>• معدل الإرسال وتوقيت الإشارات</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-red-400 mb-2">الأجهزة والوسائط:</h4>
+                  <ul class="text-sm text-gray-400 space-y-1">
+                    <li>• كابلات (UTP, Fiber Optic)</li>
+                    <li>• Hubs, Repeaters</li>
+                    <li>• موجات الراديو والإشارات</li>
+                    <li>• Network Interface Cards (NIC)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client-Server Model Section -->
+    <section id="client-server" class="py-20 relative z-10">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-5xl font-black mb-4 gradient-text">
+            Client-Server Model
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            نموذج العميل-الخادم هو بنية شبكة حيث يطلب العميل (Client) خدمة أو
+            مورد من الخادم (Server)
+          </p>
+        </div>
+
+        <!-- Client-Server Explanation -->
+        <div class="layer-card rounded-2xl p-8 mb-8" data-aos="fade-up">
+          <h3 class="text-3xl font-bold text-red-500 mb-6 text-center">
+            كيف يعمل النموذج؟
+          </h3>
+
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div
+              class="text-center p-6 bg-black bg-opacity-50 rounded-lg"
+              data-aos="fade-right"
+              data-aos-delay="100"
+            >
+              <i class="fas fa-laptop text-5xl mb-4 text-red-500"></i>
+              <h4 class="text-xl font-bold text-red-400 mb-3">
+                1. Client (العميل)
+              </h4>
+              <p class="text-gray-400 text-sm">
+                المستخدم يفتح المتصفح ويكتب عنوان الموقع (URL)
+              </p>
+            </div>
+
+            <div
+              class="text-center p-6 bg-black bg-opacity-50 rounded-lg"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <i class="fas fa-paper-plane text-5xl mb-4 text-red-500"></i>
+              <h4 class="text-xl font-bold text-red-400 mb-3">
+                2. Request (الطلب)
+              </h4>
+              <p class="text-gray-400 text-sm">
+                المتصفح يرسل HTTP Request للخادم عبر الإنترنت
+              </p>
+            </div>
+
+            <div
+              class="text-center p-6 bg-black bg-opacity-50 rounded-lg"
+              data-aos="fade-left"
+              data-aos-delay="300"
+            >
+              <i class="fas fa-server text-5xl mb-4 text-red-500"></i>
+              <h4 class="text-xl font-bold text-red-400 mb-3">
+                3. Server (الخادم)
+              </h4>
+              <p class="text-gray-400 text-sm">
+                الخادم يستقبل الطلب ويعالج البيانات
+              </p>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div
+              class="text-center p-6 bg-black bg-opacity-50 rounded-lg"
+              data-aos="fade-right"
+              data-aos-delay="400"
+            >
+              <i class="fas fa-cogs text-5xl mb-4 text-red-500"></i>
+              <h4 class="text-xl font-bold text-red-400 mb-3">
+                4. Processing (المعالجة)
+              </h4>
+              <p class="text-gray-400 text-sm">
+                الخادم يبحث عن الملفات المطلوبة ويجهز الرد
+              </p>
+            </div>
+
+            <div
+              class="text-center p-6 bg-black bg-opacity-50 rounded-lg"
+              data-aos="fade-up"
+              data-aos-delay="500"
+            >
+              <i class="fas fa-reply text-5xl mb-4 text-red-500"></i>
+              <h4 class="text-xl font-bold text-red-400 mb-3">
+                5. Response (الرد)
+              </h4>
+              <p class="text-gray-400 text-sm">
+                الخادم يرسل HTTP Response يحتوي على البيانات المطلوبة
+              </p>
+            </div>
+
+            <div
+              class="text-center p-6 bg-black bg-opacity-50 rounded-lg"
+              data-aos="fade-left"
+              data-aos-delay="600"
+            >
+              <i class="fas fa-paint-brush text-5xl mb-4 text-red-500"></i>
+              <h4 class="text-xl font-bold text-red-400 mb-3">
+                6. Rendering (العرض)
+              </h4>
+              <p class="text-gray-400 text-sm">المتصفح يعرض الصفحة للمستخدم</p>
+            </div>
+          </div>
+
+          <!-- Visual Flow -->
+          <div class="mt-12 text-center" data-aos="zoom-in">
+            <div
+              class="inline-block bg-gradient-to-r from-red-900 to-black p-8 rounded-2xl"
+            >
+              <div class="flex items-center justify-center gap-6 flex-wrap">
+                <div class="text-center">
+                  <i class="fas fa-laptop text-6xl mb-2 text-red-500"></i>
+                  <p class="text-sm font-bold">Client</p>
+                </div>
+                <i class="fas fa-arrow-right text-4xl text-red-500"></i>
+                <div class="text-center">
+                  <i class="fas fa-paper-plane text-6xl mb-2 text-red-500"></i>
+                  <p class="text-sm font-bold">Request</p>
+                </div>
+                <i class="fas fa-arrow-right text-4xl text-red-500"></i>
+                <div class="text-center">
+                  <i class="fas fa-server text-6xl mb-2 text-red-500"></i>
+                  <p class="text-sm font-bold">Server</p>
+                </div>
+                <i class="fas fa-arrow-right text-4xl text-red-500"></i>
+                <div class="text-center">
+                  <i class="fas fa-reply text-6xl mb-2 text-red-500"></i>
+                  <p class="text-sm font-bold">Response</p>
+                </div>
+                <i class="fas fa-arrow-right text-4xl text-red-500"></i>
+                <div class="text-center">
+                  <i class="fas fa-check-circle text-6xl mb-2 text-red-500"></i>
+                  <p class="text-sm font-bold">Display</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Request-Response Details -->
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div class="layer-card rounded-2xl p-8" data-aos="fade-right">
+            <h3 class="text-2xl font-bold text-red-500 mb-4">
+              📥 HTTP Request Components
+            </h3>
+            <div class="space-y-3 text-sm">
+              <div class="bg-black bg-opacity-50 p-4 rounded">
+                <p class="text-red-400 font-bold mb-1">Request Line:</p>
+                <p class="text-gray-300">GET /index.html HTTP/1.1</p>
+              </div>
+              <div class="bg-black bg-opacity-50 p-4 rounded">
+                <p class="text-red-400 font-bold mb-1">Headers:</p>
+                <p class="text-gray-300">Host: www.example.com</p>
+                <p class="text-gray-300">User-Agent: Mozilla/5.0</p>
+              </div>
+              <div class="bg-black bg-opacity-50 p-4 rounded">
+                <p class="text-red-400 font-bold mb-1">Body (اختياري):</p>
+                <p class="text-gray-300">البيانات المرسلة مع POST Request</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="layer-card rounded-2xl p-8" data-aos="fade-left">
+            <h3 class="text-2xl font-bold text-red-500 mb-4">
+              📤 HTTP Response Components
+            </h3>
+            <div class="space-y-3 text-sm">
+              <div class="bg-black bg-opacity-50 p-4 rounded">
+                <p class="text-red-400 font-bold mb-1">Status Line:</p>
+                <p class="text-gray-300">HTTP/1.1 200 OK</p>
+              </div>
+              <div class="bg-black bg-opacity-50 p-4 rounded">
+                <p class="text-red-400 font-bold mb-1">Headers:</p>
+                <p class="text-gray-300">Content-Type: text/html</p>
+                <p class="text-gray-300">Content-Length: 1024</p>
+              </div>
+              <div class="bg-black bg-opacity-50 p-4 rounded">
+                <p class="text-red-400 font-bold mb-1">Body:</p>
+                <p class="text-gray-300">محتوى الصفحة HTML, CSS, JS</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HTTP Methods -->
+        <div class="layer-card rounded-2xl p-8 mb-8" data-aos="fade-up">
+          <h3 class="text-3xl font-bold text-red-500 mb-6 text-center">
+            HTTP Methods
+          </h3>
+          <div class="grid md:grid-cols-4 gap-4">
+            <div class="bg-black bg-opacity-50 p-4 rounded-lg text-center">
+              <h4 class="text-xl font-bold text-red-400 mb-2">GET</h4>
+              <p class="text-sm text-gray-400">طلب قراءة البيانات من السيرفر</p>
+            </div>
+            <div class="bg-black bg-opacity-50 p-4 rounded-lg text-center">
+              <h4 class="text-xl font-bold text-red-400 mb-2">POST</h4>
+              <p class="text-sm text-gray-400">إرسال بيانات جديدة للسيرفر</p>
+            </div>
+            <div class="bg-black bg-opacity-50 p-4 rounded-lg text-center">
+              <h4 class="text-xl font-bold text-red-400 mb-2">PUT</h4>
+              <p class="text-sm text-gray-400">تحديث بيانات موجودة</p>
+            </div>
+            <div class="bg-black bg-opacity-50 p-4 rounded-lg text-center">
+              <h4 class="text-xl font-bold text-red-400 mb-2">DELETE</h4>
+              <p class="text-sm text-gray-400">حذف بيانات من السيرفر</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real Example -->
+        <div class="layer-card rounded-2xl p-8" data-aos="zoom-in">
+          <h3 class="text-3xl font-bold text-red-500 mb-6 text-center">
+            مثال عملي: زيارة موقع ويب
+          </h3>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <i class="fas fa-circle text-3xl text-red-500"></i>
+              <div>
+                <h4 class="font-bold text-red-400 mb-1">
+                  تكتب www.google.com في المتصفح
+                </h4>
+                <p class="text-sm text-gray-400">
+                  المتصفح يحول الاسم لعنوان IP باستخدام DNS
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <i class="fas fa-circle text-3xl text-red-500"></i>
+              <div>
+                <h4 class="font-bold text-red-400 mb-1">
+                  إنشاء TCP Connection
+                </h4>
+                <p class="text-sm text-gray-400">
+                  Three-way handshake بين جهازك والسيرفر
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <i class="fas fa-circle text-3xl text-red-500"></i>
+              <div>
+                <h4 class="font-bold text-red-400 mb-1">
+                  إرسال HTTP GET Request
+                </h4>
+                <p class="text-sm text-gray-400">
+                  الطلب يمر عبر طبقات OSI السبعة
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <i class="fas fa-circle text-3xl text-red-500"></i>
+              <div>
+                <h4 class="font-bold text-red-400 mb-1">السيرفر يعالج الطلب</h4>
+                <p class="text-sm text-gray-400">
+                  يجهز صفحة HTML مع CSS و JavaScript
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <i class="fas fa-circle text-3xl text-red-500"></i>
+              <div>
+                <h4 class="font-bold text-red-400 mb-1">إرسال HTTP Response</h4>
+                <p class="text-sm text-gray-400">
+                  الرد يحتوي على Status Code 200 والمحتوى
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <i class="fas fa-circle text-3xl text-red-500"></i>
+              <div>
+                <h4 class="font-bold text-red-400 mb-1">المتصفح يعرض الصفحة</h4>
+                <p class="text-sm text-gray-400">
+                  يفسر HTML, CSS, JS ويعرض الموقع
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black bg-opacity-80 py-8 text-center relative z-10">
+      <div class="container mx-auto px-6">
+        <p class="text-gray-400 mb-2">
+          تم إنشاء هذا الموقع لشرح OSI Model & Client-Server Architecture
+        </p>
+        <p class="text-red-500 font-bold">🐯 Powered By ElNammmer 🐯</p>
+      </div>
+    </footer>
+
+    <script>
+      // Initialize AOS Animation
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+      });
+
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Navbar scroll effect
+      let lastScroll = 0;
+      const navbar = document.querySelector(".navbar");
+
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 100) {
+          navbar.style.boxShadow = "0 10px 30px rgba(255, 0, 0, 0.3)";
+        } else {
+          navbar.style.boxShadow = "none";
+        }
+
+        lastScroll = currentScroll;
+      });
+    </script>
+  </body>
+</html>
