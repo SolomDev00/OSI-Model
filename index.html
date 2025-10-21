@@ -568,6 +568,140 @@
             </div>
           </div>
         </div>
+
+        <!-- OSI Layers Comparison Table -->
+        <div class="layer-card rounded-2xl p-8 mb-8" data-aos="fade-up">
+          <h3 class="text-4xl font-bold text-red-500 mb-8 text-center">
+            جدول المقارنة بين طبقات OSI
+          </h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="bg-red-900/30 border-b-2 border-red-500">
+                  <th class="p-4 text-right font-bold text-red-400">الطبقة</th>
+                  <th class="p-4 text-right font-bold text-red-400">الاسم</th>
+                  <th class="p-4 text-right font-bold text-red-400">
+                    الوظيفة الأساسية
+                  </th>
+                  <th class="p-4 text-right font-bold text-red-400">
+                    البروتوكولات
+                  </th>
+                  <th class="p-4 text-right font-bold text-red-400">
+                    وحدة البيانات
+                  </th>
+                  <th class="p-4 text-right font-bold text-red-400">الأجهزة</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  class="border-b border-red-500/20 hover:bg-red-900/20 transition"
+                >
+                  <td class="p-4 font-bold text-red-500">7</td>
+                  <td class="p-4">
+                    <div class="flex items-center gap-2">
+                      <i class="fas fa-mobile-alt text-red-500"></i>
+                      <span class="font-bold">Application</span>
+                    </div>
+                  </td>
+                  <td class="p-4 text-gray-300">واجهة المستخدم والتطبيقات</td>
+                  <td class="p-4 text-gray-400">HTTP, FTP, SMTP, DNS</td>
+                  <td class="p-4 text-gray-400">Data</td>
+                  <td class="p-4 text-gray-400">-</td>
+                </tr>
+                <tr
+                  class="border-b border-red-500/20 hover:bg-red-900/20 transition"
+                >
+                  <td class="p-4 font-bold text-red-500">6</td>
+                  <td class="p-4">
+                    <div class="flex items-center gap-2">
+                      <i class="fas fa-file-code text-red-500"></i>
+                      <span class="font-bold">Presentation</span>
+                    </div>
+                  </td>
+                  <td class="p-4 text-gray-300">التشفير والترجمة والضغط</td>
+                  <td class="p-4 text-gray-400">SSL/TLS, JPEG, MPEG</td>
+                  <td class="p-4 text-gray-400">Data</td>
+                  <td class="p-4 text-gray-400">-</td>
+                </tr>
+                <tr
+                  class="border-b border-red-500/20 hover:bg-red-900/20 transition"
+                >
+                  <td class="p-4 font-bold text-red-500">5</td>
+                  <td class="p-4">
+                    <div class="flex items-center gap-2">
+                      <i class="fas fa-handshake text-red-500"></i>
+                      <span class="font-bold">Session</span>
+                    </div>
+                  </td>
+                  <td class="p-4 text-gray-300">إدارة الجلسات والحوارات</td>
+                  <td class="p-4 text-gray-400">NetBIOS, RPC, PPTP</td>
+                  <td class="p-4 text-gray-400">Data</td>
+                  <td class="p-4 text-gray-400">-</td>
+                </tr>
+                <tr
+                  class="border-b border-red-500/20 hover:bg-red-900/20 transition"
+                >
+                  <td class="p-4 font-bold text-red-500">4</td>
+                  <td class="p-4">
+                    <div class="flex items-center gap-2">
+                      <i class="fas fa-truck text-red-500"></i>
+                      <span class="font-bold">Transport</span>
+                    </div>
+                  </td>
+                  <td class="p-4 text-gray-300">نقل البيانات الموثوق</td>
+                  <td class="p-4 text-gray-400">TCP, UDP</td>
+                  <td class="p-4 text-gray-400">Segments</td>
+                  <td class="p-4 text-gray-400">-</td>
+                </tr>
+                <tr
+                  class="border-b border-red-500/20 hover:bg-red-900/20 transition"
+                >
+                  <td class="p-4 font-bold text-red-500">3</td>
+                  <td class="p-4">
+                    <div class="flex items-center gap-2">
+                      <i class="fas fa-route text-red-500"></i>
+                      <span class="font-bold">Network</span>
+                    </div>
+                  </td>
+                  <td class="p-4 text-gray-300">التوجيه بين الشبكات</td>
+                  <td class="p-4 text-gray-400">IP, ICMP, ARP</td>
+                  <td class="p-4 text-gray-400">Packets</td>
+                  <td class="p-4 text-gray-400">Router</td>
+                </tr>
+                <tr
+                  class="border-b border-red-500/20 hover:bg-red-900/20 transition"
+                >
+                  <td class="p-4 font-bold text-red-500">2</td>
+                  <td class="p-4">
+                    <div class="flex items-center gap-2">
+                      <i class="fas fa-link text-red-500"></i>
+                      <span class="font-bold">Data Link</span>
+                    </div>
+                  </td>
+                  <td class="p-4 text-gray-300">
+                    نقل البيانات في الشبكة المحلية
+                  </td>
+                  <td class="p-4 text-gray-400">Ethernet, Wi-Fi, PPP</td>
+                  <td class="p-4 text-gray-400">Frames</td>
+                  <td class="p-4 text-gray-400">Switch, Bridge</td>
+                </tr>
+                <tr class="hover:bg-red-900/20 transition">
+                  <td class="p-4 font-bold text-red-500">1</td>
+                  <td class="p-4">
+                    <div class="flex items-center gap-2">
+                      <i class="fas fa-bolt text-red-500"></i>
+                      <span class="font-bold">Physical</span>
+                    </div>
+                  </td>
+                  <td class="p-4 text-gray-300">نقل البتات عبر الوسط المادي</td>
+                  <td class="p-4 text-gray-400">-</td>
+                  <td class="p-4 text-gray-400">Bits</td>
+                  <td class="p-4 text-gray-400">Hub, Cable, NIC</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -852,6 +986,79 @@
       </div>
     </section>
 
+    <!-- Questions & Answers Section -->
+    <section id="questions" class="py-20 relative z-10 bg-black/40">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-5xl font-black mb-4 gradient-text">
+            الأسئلة والاستفسارات
+          </h2>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            هل لديك سؤال عن OSI Model أو Client-Server؟ اسأل هنا!
+          </p>
+        </div>
+
+        <!-- Question Form -->
+        <div
+          class="layer-card rounded-2xl p-8 mb-12 max-w-3xl mx-auto"
+          data-aos="fade-up"
+        >
+          <h3
+            class="text-2xl font-bold text-red-500 mb-6 flex items-center gap-3"
+          >
+            <i class="fas fa-question-circle"></i>
+            اسأل سؤالك
+          </h3>
+          <form id="questionForm" class="space-y-4">
+            <div>
+              <label class="block text-gray-300 mb-2 font-bold">اسمك:</label>
+              <input
+                type="text"
+                id="userName"
+                required
+                class="w-full bg-black/50 border-2 border-red-500/30 rounded-lg p-3 text-white focus:border-red-500 focus:outline-none transition"
+                placeholder="أدخل اسمك..."
+              />
+            </div>
+            <div>
+              <label class="block text-gray-300 mb-2 font-bold">سؤالك:</label>
+              <textarea
+                id="userQuestion"
+                required
+                rows="4"
+                class="w-full bg-black/50 border-2 border-red-500/30 rounded-lg p-3 text-white focus:border-red-500 focus:outline-none transition resize-none"
+                placeholder="اكتب سؤالك هنا..."
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+            >
+              <i class="fas fa-paper-plane"></i>
+              إرسال السؤال
+            </button>
+          </form>
+        </div>
+
+        <!-- Questions Display -->
+        <div class="max-w-5xl mx-auto">
+          <h3
+            class="text-3xl font-bold text-red-500 mb-8 text-center"
+            data-aos="fade-up"
+          >
+            <i class="fas fa-comments"></i> الأسئلة المطروحة
+          </h3>
+          <div id="questionsContainer" class="space-y-6">
+            <!-- Questions will be displayed here -->
+          </div>
+          <div id="noQuestions" class="text-center text-gray-400 py-12">
+            <i class="fas fa-inbox text-6xl mb-4 opacity-50"></i>
+            <p class="text-xl">لا توجد أسئلة حتى الآن. كن أول من يسأل!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-black bg-opacity-80 py-8 text-center relative z-10">
       <div class="container mx-auto px-6">
@@ -899,6 +1106,176 @@
 
         lastScroll = currentScroll;
       });
+
+      // Questions System with Cookies
+      const COOKIE_NAME = "osiQuestions";
+      const LIKES_COOKIE = "osiLikes";
+
+      // Get Cookie
+      function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(";").shift();
+        return null;
+      }
+
+      // Set Cookie (expires in 30 days)
+      function setCookie(name, value, days = 30) {
+        const date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        const expires = `expires=${date.toUTCString()}`;
+        document.cookie = `${name}=${value};${expires};path=/`;
+      }
+
+      // Load Questions from Cookie
+      function loadQuestions() {
+        const cookie = getCookie(COOKIE_NAME);
+        return cookie ? JSON.parse(decodeURIComponent(cookie)) : [];
+      }
+
+      // Save Questions to Cookie
+      function saveQuestions(questions) {
+        setCookie(COOKIE_NAME, encodeURIComponent(JSON.stringify(questions)));
+      }
+
+      // Load Likes from Cookie
+      function loadLikes() {
+        const cookie = getCookie(LIKES_COOKIE);
+        return cookie ? JSON.parse(decodeURIComponent(cookie)) : {};
+      }
+
+      // Save Likes to Cookie
+      function saveLikes(likes) {
+        setCookie(LIKES_COOKIE, encodeURIComponent(JSON.stringify(likes)));
+      }
+
+      // Display Questions
+      function displayQuestions() {
+        const questions = loadQuestions();
+        const likes = loadLikes();
+        const container = document.getElementById("questionsContainer");
+        const noQuestions = document.getElementById("noQuestions");
+
+        if (questions.length === 0) {
+          noQuestions.style.display = "block";
+          container.innerHTML = "";
+          return;
+        }
+
+        noQuestions.style.display = "none";
+        container.innerHTML = questions
+          .map(
+            (q, index) => `
+    <div class="layer-card rounded-xl p-6 transform hover:scale-102 transition" data-aos="fade-up" data-aos-delay="${
+      index * 100
+    }">
+      <div class="flex items-start gap-4">
+        <div class="flex-shrink-0">
+          <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+            ${q.name.charAt(0).toUpperCase()}
+          </div>
+        </div>
+        <div class="flex-1">
+          <div class="flex items-center justify-between mb-2">
+            <h4 class="text-xl font-bold text-red-400">${q.name}</h4>
+            <span class="text-xs text-gray-500">${q.date}</span>
+          </div>
+          <p class="text-gray-300 mb-4 leading-relaxed">${q.question}</p>
+          <div class="flex items-center gap-4">
+            <button onclick="likeQuestion(${index})" 
+              class="like-btn flex items-center gap-2 bg-red-900/30 hover:bg-red-900/50 px-4 py-2 rounded-full transition-all transform hover:scale-105 ${
+                likes[index] ? "liked" : ""
+              }">
+              <i class="fas fa-heart ${
+                likes[index] ? "text-red-500" : "text-gray-400"
+              }"></i>
+              <span class="font-bold ${
+                likes[index] ? "text-red-500" : "text-gray-400"
+              }" id="likeCount${index}">${q.likes || 0}</span>
+            </button>
+            <span class="text-xs text-gray-500">
+              <i class="fas fa-comment"></i> سؤال رقم ${index + 1}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `
+          )
+          .join("");
+
+        AOS.refresh();
+      }
+
+      // Like Question
+      function likeQuestion(index) {
+        const questions = loadQuestions();
+        const likes = loadLikes();
+
+        if (likes[index]) {
+          questions[index].likes = (questions[index].likes || 0) - 1;
+          delete likes[index];
+        } else {
+          questions[index].likes = (questions[index].likes || 0) + 1;
+          likes[index] = true;
+        }
+
+        saveQuestions(questions);
+        saveLikes(likes);
+        displayQuestions();
+      }
+
+      // Add Question
+      document
+        .getElementById("questionForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("userName").value.trim();
+          const question = document.getElementById("userQuestion").value.trim();
+
+          if (!name || !question) {
+            alert("من فضلك أدخل اسمك وسؤالك!");
+            return;
+          }
+
+          const questions = loadQuestions();
+          const now = new Date();
+          const date = `${now.getDate()}/${
+            now.getMonth() + 1
+          }/${now.getFullYear()}`;
+
+          questions.unshift({
+            name: name,
+            question: question,
+            date: date,
+            likes: 0,
+          });
+
+          saveQuestions(questions);
+          displayQuestions();
+
+          this.reset();
+
+          const btn = this.querySelector("button");
+          const originalText = btn.innerHTML;
+          btn.innerHTML = '<i class="fas fa-check"></i> تم إرسال السؤال بنجاح!';
+          btn.classList.add("bg-green-600");
+          btn.classList.remove("bg-red-600");
+
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.classList.remove("bg-green-600");
+            btn.classList.add("bg-red-600");
+          }, 2000);
+
+          document
+            .getElementById("questionsContainer")
+            .scrollIntoView({ behavior: "smooth" });
+        });
+
+      // Load questions on page load
+      window.addEventListener("load", displayQuestions);
     </script>
   </body>
 </html>
